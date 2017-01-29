@@ -15,6 +15,8 @@ import framework.ObjectId;
 public class Player extends GameObject {
 	
 	private float width = 32, height = 32;
+	public float lightRadius = 400f;
+	public float lightDecRate = 0.75f;
 	
 	private float gravity = 1f;
 	private final float MAX_SPEED = 20;
@@ -32,6 +34,8 @@ public class Player extends GameObject {
 	public void tick(LinkedList<GameObject> object) {
 		x += velX;
 		y += velY;
+		
+		lightRadius -= lightDecRate;
 		
 		if(falling || jumping)
 		{
@@ -103,6 +107,10 @@ public class Player extends GameObject {
 		}
 		
 		Graphics2D g2d = (Graphics2D) g;
+		
+		g.setColor(Color.yellow);
+		g2d.drawOval((int)(x - lightRadius / 2 + width / 2), (int)(y - lightRadius / 2 + height / 2), (int)lightRadius, (int)lightRadius);
+		
 		g.setColor(Color.RED);
 		g2d.draw(getBounds());
 		g2d.draw(getBoundsRight());
