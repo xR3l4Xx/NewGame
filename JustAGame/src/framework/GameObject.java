@@ -2,6 +2,7 @@ package framework;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 import java.util.LinkedList;
 
 public abstract class GameObject {
@@ -11,6 +12,7 @@ public abstract class GameObject {
 	protected float velX = 0, velY = 0;
 	protected boolean falling = true;
 	protected boolean jumping = false;
+	protected BufferedImage texture;
 	
 	public GameObject(float x, float y, ObjectId id)
 	{
@@ -27,6 +29,10 @@ public abstract class GameObject {
 	public float getY(){return y;}
 	public void setX(float x){this.x = x;}
 	public void setY(float y){this.y = y;}
+	
+	public void setTexture(BufferedImage img){
+		texture = img;
+	}
 	
 	public float getVelX(){return velX;}
 	public float getVelY(){return velY;}
