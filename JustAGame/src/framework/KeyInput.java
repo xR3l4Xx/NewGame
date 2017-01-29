@@ -21,12 +21,12 @@ public class KeyInput extends KeyAdapter
 			GameObject tempObject = handler.object.get(i);
 			
 			if(tempObject.getId() == ObjectId.Player){
-				if(key == KeyEvent.VK_D) tempObject.setVelX(5);
-				if(key == KeyEvent.VK_A) tempObject.setVelX(-5);
+				if(key == KeyEvent.VK_D) tempObject.setVelX(10);
+				if(key == KeyEvent.VK_A) tempObject.setVelX(-10);
 				if(key == KeyEvent.VK_SPACE && !tempObject.isJumping())
 				{
 					tempObject.setJumping(true);
-					tempObject.setVelY(-12);
+					tempObject.setVelY(-18);
 				}
 			}
 		}

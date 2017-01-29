@@ -16,8 +16,8 @@ public class Player extends GameObject {
 	
 	private float width = 48, height = 96;
 	
-	private float gravity = 0.5f;
-	private final float MAX_SPEED = 10;
+	private float gravity = 1f;
+	private final float MAX_SPEED = 20;
 	
 	private Handler handler;
 
