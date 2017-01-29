@@ -59,10 +59,8 @@ public class Player extends GameObject {
 			{
 				
 				if(getBoundsTop().intersects(tempObject.getBounds())){
-					if(tempObject.getY()<y){
-						y = tempObject.getY() + height;
-						velY = 0;
-					}
+					y = tempObject.getY() + 12;
+					velY = 0;
 				}
 				
 				if(getBounds().intersects(tempObject.getBounds())){
@@ -75,12 +73,12 @@ public class Player extends GameObject {
 				
 				//Right
 				if(getBoundsRight().intersects(tempObject.getBounds())){
-					x = tempObject.getX() - (width+2);
+					x = tempObject.getX() - width;
 				}
 				
 				//Left
 				if(getBoundsLeft().intersects(tempObject.getBounds())){
-					x = tempObject.getX() + (width+2);
+					x = tempObject.getX() + width;
 				}
 			}
 			
