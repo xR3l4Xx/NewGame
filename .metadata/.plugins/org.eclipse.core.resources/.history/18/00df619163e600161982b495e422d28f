@@ -1,0 +1,11 @@
+package window;
+
+import java.awt.Graphics;
+
+public class Minimap{
+	
+	public static void render(Graphics g){
+		g.fillRect((int) -Game.cam.getX()+Game.WIDTH-100, 0, 100, 100);
+		
+	}
+}

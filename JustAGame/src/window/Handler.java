@@ -30,6 +30,8 @@ public class Handler
 			
 			tempObject.render(g);
 		}
+		
+
 	}
 	
 	public void addObject(GameObject object){

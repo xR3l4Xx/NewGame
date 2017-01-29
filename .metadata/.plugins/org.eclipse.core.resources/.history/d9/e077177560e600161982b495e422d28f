@@ -1,0 +1,13 @@
+package window;
+
+import java.awt.Graphics;
+
+public class Minimap{
+	public Minimap(){
+		
+	}
+	
+	public void render(Graphics g){
+		g.fillRect(Game.WIDTH-100, 0, Game.WIDTH, 100);
+	}
+}

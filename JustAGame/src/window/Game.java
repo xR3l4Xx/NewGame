@@ -19,9 +19,10 @@ public class Game extends Canvas implements Runnable {
 	private boolean running = false;
 	private Thread thread;
 	
+	
 	public static int WIDTH, HEIGHT;
 	
-	private BufferedImage level = null;
+	public static BufferedImage level = null;
 	
 	//Object
 	Handler handler;
@@ -113,7 +114,6 @@ public class Game extends Canvas implements Runnable {
 		g2d.translate(cam.getX(), cam.getY()); // begin of cam
 		
 			handler.render(g);
-		
 		g2d.translate(cam.getX(), cam.getY()); // end of cam
 		//////////////////////////////////
 		

@@ -1,0 +1,22 @@
+package window;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+
+public class Minimap{
+	
+	public static void render(Graphics g){
+		
+		for(int i = 0; i < Game.level.getWidth();i++){
+			for(int j = 0; j < Game.level.getHeight(); j++){
+				int pixel = Game.level.getRGB(i, j);
+				
+				g.setColor(new Color(Game.level.getRGB(i, j)));
+				g.fillRect(i, j, 1, 1);
+			}
+		}
+		//g.fillRect((int) -Game.cam.getX()+Game.WIDTH-100, 0, 100, 100);
+		
+	}
+}

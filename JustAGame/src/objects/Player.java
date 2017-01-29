@@ -119,7 +119,7 @@ public class Player extends GameObject {
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle((int) ((int)x+(width/2)-((width/2)/2)), (int) ((int)y+(height/2)), (int)width/2, (int)height/2);
+		return new Rectangle((int) ((int)x+(width/2)-(width/8)), (int) ((int)y+(height/2)), (int)width/4, (int)height/2);
 	}
 	
 	public Rectangle getBoundsTop() {
