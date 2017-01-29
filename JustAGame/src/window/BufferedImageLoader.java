@@ -1,5 +1,6 @@
 package window;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
@@ -12,7 +13,7 @@ public class BufferedImageLoader {
 	private BufferedImage image;
 	
 	@SuppressWarnings("finally")
-	public BufferedImage loadImage(String path, float scl){
+	public BufferedImage loadImage(String path, int scl){
 		
 		try {
 			image = ImageIO.read(getClass().getResource(path));
@@ -23,8 +24,18 @@ public class BufferedImageLoader {
 			float h = scl * image.getHeight();
 			BufferedImage resizedImg = new BufferedImage((int)w, (int)h, BufferedImage.TRANSLUCENT);
 		    Graphics2D g2 = resizedImg.createGraphics();
-		    g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-		    g2.drawImage(image, 0, 0, (int)w, (int)h, null);
+		    for(int x = 0; x < image.getWidth(); x++){
+		    	for(int y = 0; y < image.getHeight(); y++){
+		    		int clr = image.getRGB(x, y);
+		    		Color c = new Color((clr & 0x00ff0000) >> 16, (clr & 0x0000ff00) >> 8, clr & 0x000000ff);
+		    		g2.setColor(c);
+		    		for(int i = 0; i < scl; i++){
+		    			for(int j = 0; j < scl; j++){
+		    				g2.fillRect((int)(x * scl + i), (int)(y * scl + j), 1, 1);
+		    			}
+		    		}
+		    	}
+		    }
 		    g2.dispose();
 		    return resizedImg;
 		}
