@@ -7,11 +7,14 @@ import java.util.LinkedList;
 
 import framework.GameObject;
 import framework.ObjectId;
+import window.BufferedImageLoader;
 
 public class Block extends GameObject {
 
 	public Block(float x, float y, ObjectId id) {
 		super(x, y, id);
+		BufferedImageLoader loader = new BufferedImageLoader();
+		texture = loader.loadImage("/wall.png", 4);
 	}
 
 	public void tick(LinkedList<GameObject> object) {
@@ -20,8 +23,12 @@ public class Block extends GameObject {
 
 	public void render(Graphics g)
 	{
-		g.setColor(Color.WHITE);
-		g.drawRect((int)x, (int)y, 32, 32);
+		if(texture==null){
+			g.setColor(Color.WHITE);
+			g.drawRect((int)x, (int)y, 32, 32);
+		}else{
+			g.drawImage(texture, (int)x, (int)y, null);
+		}
 	}
 
 	public Rectangle getBounds() {
