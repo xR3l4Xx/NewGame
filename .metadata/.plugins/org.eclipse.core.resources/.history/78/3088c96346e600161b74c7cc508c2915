@@ -1,22 +1,26 @@
 package window;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
 public class BufferedImageLoader {
-	
+
 	private BufferedImage image;
-	
-	public BufferedImage loadImage(String path){
-		
+
+	public BufferedImage loadImage(String path) {
+
 		try {
-			image = ImageIO.read(getClass().getResource(path));
+			File f = new File(path);
+			if (f.exists() && !f.isDirectory()) {
+				image = ImageIO.read(getClass().getResource(path));
+			}
 		} catch (IOException e) {
 			System.out.println("Error: " + e);
 		}
 		return image;
 	}
-	
+
 }

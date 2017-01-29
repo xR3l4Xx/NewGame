@@ -16,6 +16,7 @@ public class BufferedImageLoader {
 		} catch (IOException e) {
 			System.out.println("Error: " + e);
 		}
+		continue;
 		return image;
 	}
 	

@@ -91,7 +91,7 @@ public class Player extends GameObject {
 			g.setColor(Color.BLUE);
 			g.fillRect((int)x, (int)y, (int)width, (int)height);
 		}else{
-			g.drawImage(texture, (int)x, (int)y, null);
+			g.drawImage(texture, x, y, null);
 		}
 		
 		Graphics2D g2d = (Graphics2D) g;

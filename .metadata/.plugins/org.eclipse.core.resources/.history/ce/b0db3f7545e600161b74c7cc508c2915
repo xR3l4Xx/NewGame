@@ -86,13 +86,8 @@ public class Player extends GameObject {
 	}
 
 	public void render(Graphics g) {
-		
-		if(texture==null){
-			g.setColor(Color.BLUE);
-			g.fillRect((int)x, (int)y, (int)width, (int)height);
-		}else{
-			g.drawImage(texture, (int)x, (int)y, null);
-		}
+		g.setColor(Color.BLUE);
+		g.fillRect((int)x, (int)y, (int)width, (int)height);
 		
 		Graphics2D g2d = (Graphics2D) g;
 		g.setColor(Color.RED);

@@ -1,0 +1,7 @@
+package framework;
+
+public class TextureLoader {
+	public Texture loadTexture(){
+		
+	}
+}

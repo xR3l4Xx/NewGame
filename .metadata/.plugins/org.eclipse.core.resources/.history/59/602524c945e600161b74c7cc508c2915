@@ -14,7 +14,8 @@ public class BufferedImageLoader {
 		try {
 			image = ImageIO.read(getClass().getResource(path));
 		} catch (IOException e) {
-			System.out.println("Error: " + e);
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return image;
 	}
