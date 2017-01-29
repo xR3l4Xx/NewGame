@@ -94,6 +94,13 @@ public class Player extends GameObject {
 					y = 2*32;
 				}
 			}
+			
+			if(tempObject.getId() == ObjectId.Lava){
+				if(getBoundsTop().intersects(tempObject.getBounds()) || getBounds().intersects(tempObject.getBounds()) || getBoundsRight().intersects(tempObject.getBounds()) || getBoundsLeft().intersects(tempObject.getBounds())){
+					x = 3*32;
+					y = 2*32;
+				}
+			}
 		}
 	}
 

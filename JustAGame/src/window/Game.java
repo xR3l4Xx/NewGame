@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import objects.Block;
 import objects.Door;
 import objects.Player;
+import objects.Lava;
 import framework.KeyInput;
 import framework.ObjectId;
 
@@ -135,6 +136,7 @@ public class Game extends Canvas implements Runnable {
 				int blue = (pixel) & 0xff;
 
 				if(red == 255 && green == 255 && blue == 255) handler.object.add(new Block(xx*32,yy*32,ObjectId.Block));
+				if(red == 255 && green == 0 && blue == 0) handler.object.add(new Lava(xx*32, yy*32,ObjectId.Lava));
 				if(red == 0 && green == 0 && blue == 255) handler.object.add(new Player(xx*32,yy*32,handler,ObjectId.Player));
 			}
 		}

@@ -5,5 +5,6 @@ public enum ObjectId
 	
 	Player(),
 	Block(),
-	Door();
+	Door(),
+	Lava();
 }
