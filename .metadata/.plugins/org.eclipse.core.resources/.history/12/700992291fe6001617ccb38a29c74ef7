@@ -1,0 +1,137 @@
+import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class ImageEditing {
+	
+	static int newColors[][] = new int[][]{
+			  { 0, 0, 0}, //0 - Black
+			  { 0, 0, 170}, //1 - Dark Blue
+			  { 0, 170, 0}, //2 - Dark Green
+			  { 0, 170, 170}, //3 - Dark Aqua
+			  { 170, 0, 0}, //4 - Dark Red
+			  { 170, 0, 170}, //5 - Dark Purple
+			  { 255, 170, 0}, //6 - Gold
+			  { 170, 170, 170}, //7 - Gray
+			  { 85, 85, 85}, //8 - Dark Gray
+			  { 85, 85, 255}, //9 - Blue
+			  { 85, 255, 85}, //a - Green
+			  { 85, 255, 255}, //b - Aqua
+			  { 255, 85, 85}, //c - Red
+			  { 255, 85, 255}, //d - Light Purple
+			  { 255, 255, 85}, //e - Yellow
+			  { 255, 255, 255} //f - White
+			  
+		/*	  {255,0,0},
+			  {0,255,0},
+			  {0,0,255}*/
+			};;
+	
+	public static void main(String args[]) {
+		JFrame f = new JFrame();
+		f.setSize(300, 200);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setVisible(true);
+		
+		JPanel panel = new JPanel();
+		JLabel label = new JLabel("Processing...");
+		panel.add(label);
+		f.add(panel);
+		
+		File originalImage = new File("C:/Users/csalad/Desktop/David/earth.jpg");
+		
+		BufferedImage img = null;
+		try {
+			img = ImageIO.read(originalImage);
+			f.setSize(img.getWidth(), img.getHeight());
+			
+			int colors[][][] = new int[img.getWidth()][img.getHeight()][3];
+			
+			for(int i = 0; i < img.getWidth(); i++){
+				for(int j = 0; j < img.getHeight(); j++){
+					int r = (img.getRGB(i, j)>>16)&0xFF;
+					int g = (img.getRGB(i, j)>>8)&0xFF;
+					int b = (img.getRGB(i, j)>>0)&0xFF;
+
+					colors[i][j][0] = r;
+					colors[i][j][1] = g;
+					colors[i][j][2] = b;
+					
+					int c[] = new int[]{
+							colors[i][j][0],
+							colors[i][j][1],
+							colors[i][j][2],
+					};
+					
+					c = getNewColor(c);
+					
+					//System.out.println("RGB1: " + c[0] + " " + c[1] + " " + c[2]);
+				/*	colors[i][j][0] = c[0];
+					colors[i][j][1] = c[1];
+					colors[i][j][2] = c[2];*/
+					
+					Color cyka = new Color(c[0], c[1], c[2]);
+				//	System.out.println("RGB2: " + cyka.getRed() + " " + cyka.getGreen() + " " + cyka.getBlue());
+					
+					img.setRGB(i, j, cyka.getRGB());
+				}
+			}
+			
+			File outputfile = new File("edited.png");
+			ImageIO.write(img, "png", outputfile);
+			
+			label.setText("Ready");
+			
+			f.setSize(300, 200);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static int[] getNewColor(int c[]){
+		int newColor[];
+		int r = c[0];
+		int g = c[1];
+		int b = c[2];
+		int dif_min;
+		int lowest=0;
+		
+		dif_min = 3*255*255;
+		
+		
+		for(int i = 0; i < newColors.length; i++){
+			int nR = newColors[i][0];
+			int nG = newColors[i][1];
+			int nB = newColors[i][2];
+
+			
+			double dR = Math.abs(nR-r);
+			double dG = Math.abs(nG-g);
+			double dB = Math.abs(nB-b);
+			
+			
+			int dif = (int) Math.sqrt(dR*dR + dG*dG + dB*dB);
+			
+			if(dif < dif_min){
+				dif_min = dif;
+				lowest = i;
+			}
+		}
+		newColor = new int[]{
+			newColors[lowest][0],
+			newColors[lowest][1],
+			newColors[lowest][2],
+		};
+		
+		return newColor;
+	}
+}
