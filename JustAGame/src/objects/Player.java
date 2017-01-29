@@ -71,6 +71,13 @@ public class Player extends GameObject {
 					x = tempObject.getX() + 32;
 				}
 			}
+			
+			if(tempObject.getId() == ObjectId.Door){
+				if(getBoundsTop().intersects(tempObject.getBounds()) || getBounds().intersects(tempObject.getBounds()) || getBoundsRight().intersects(tempObject.getBounds()) || getBoundsLeft().intersects(tempObject.getBounds())){
+					x = 3*32;
+					y = 2*32;
+				}
+			}
 		}
 	}
 

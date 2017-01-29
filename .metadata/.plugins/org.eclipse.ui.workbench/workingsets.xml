@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
-<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1479386573048_1" label="Networking" name="Networking">
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Networking - Client" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Networking - Server" type="4"/>
-</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1479386573048_1" label="Networking" name="Networking"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1478193823195_0" label="Window Working Set" name="Aggregate for window 1478193823194"/>
 </workingSetManager>

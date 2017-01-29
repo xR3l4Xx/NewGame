@@ -45,8 +45,10 @@ public class KeyInput extends KeyAdapter
 			
 			if(tempObject.getId() == ObjectId.Player){
 				if(key == KeyEvent.VK_D)
+					if(tempObject.getVelX() > 0)
 					tempObject.setVelX(0);
 				if(key == KeyEvent.VK_A)
+					if(tempObject.getVelX() < 0)
 					tempObject.setVelX(0);
 			}
 		}
