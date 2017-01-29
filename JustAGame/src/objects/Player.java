@@ -26,7 +26,7 @@ public class Player extends GameObject {
 		this.handler = handler;
 		
 		BufferedImageLoader loader = new BufferedImageLoader();
-		texture = loader.loadImage("/player.png");
+		texture = loader.loadImage("/player2.png", 4);
 	}
 
 	public void tick(LinkedList<GameObject> object) {
