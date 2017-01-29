@@ -30,7 +30,9 @@ public class BufferedImageLoader {
 		    		g2.setColor(c);
 		    		for(int i = 0; i < scl; i++){
 		    			for(int j = 0; j < scl; j++){
-		    				g2.fillRect((int)(x * scl + i), (int)(y * scl + j), 1, 1);
+		    				if(c.getRed() != 255 || c.getGreen() != 0 || c.getBlue() != 255){
+		    					g2.fillRect((int)(x * scl + i), (int)(y * scl + j), 1, 1);
+		    				}
 		    			}
 		    		}
 		    	}

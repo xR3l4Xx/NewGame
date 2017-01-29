@@ -14,7 +14,7 @@ public class Lava extends GameObject{
 	public Lava(float x, float y, ObjectId id) {
 		super(x, y, id);
 		BufferedImageLoader loader = new BufferedImageLoader();
-		texture = loader.loadImage("/lava.png", 4);
+		texture = loader.loadImage("/spike.png", 1);
 	}
 
 	@Override
