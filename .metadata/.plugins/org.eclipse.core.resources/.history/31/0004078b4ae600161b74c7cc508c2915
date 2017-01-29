@@ -43,6 +43,8 @@ public class Player extends GameObject {
 		
 		Collision(object);
 		
+		System.out.println("Y: " + y);
+		
 		if(y > Game.HEIGHT + height){
 			y = 4*64;
 			

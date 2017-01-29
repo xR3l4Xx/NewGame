@@ -15,10 +15,8 @@
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="objects.Test"/>
 <fullyQualifiedTypeName name="java.awt.Rectangle"/>
-<fullyQualifiedTypeName name="framework.ObjectId"/>
 <fullyQualifiedTypeName name="objects.Block"/>
 <fullyQualifiedTypeName name="java.util.Vector"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.awt.Dimension"/>
 <fullyQualifiedTypeName name="objects.Player"/>
 <fullyQualifiedTypeName name="java.awt.event.KeyAdapter"/>
@@ -32,7 +30,6 @@
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="java.awt.Graphics"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
 <fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
@@ -42,4 +39,10 @@
 <fullyQualifiedTypeName name="javax.swing.BoxLayout"/>
 <fullyQualifiedTypeName name="java.awt.Image"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="objects.Door"/>
+<fullyQualifiedTypeName name="framework.ObjectId"/>
+<fullyQualifiedTypeName name="window.BufferedImageLoader"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="window.Game"/>
 </qualifiedTypeNameHistroy>

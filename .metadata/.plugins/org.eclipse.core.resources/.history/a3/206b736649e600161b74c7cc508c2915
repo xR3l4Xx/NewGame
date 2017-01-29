@@ -9,7 +9,6 @@ public class BufferedImageLoader {
 	
 	private BufferedImage image;
 	
-	@SuppressWarnings("finally")
 	public BufferedImage loadImage(String path){
 		
 		try {

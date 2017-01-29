@@ -7,7 +7,6 @@ import java.awt.Rectangle;
 import java.util.LinkedList;
 
 import window.BufferedImageLoader;
-import window.Game;
 import window.Handler;
 import framework.GameObject;
 import framework.ObjectId;
@@ -42,11 +41,6 @@ public class Player extends GameObject {
 		}
 		
 		Collision(object);
-		
-		if(y > Game.HEIGHT + height){
-			y = 4*64;
-			
-		}
 	}
 	
 	public void Collision(LinkedList<GameObject> object)
